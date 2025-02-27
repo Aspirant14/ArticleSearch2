@@ -1,6 +1,4 @@
-package ArticleSearch2.app.src.main.java.com.codepath.articlesearch
-
-import DisplayArticle
+package com.codepath.articlesearch
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.codepath.articlesearch.DetailActivity
 
 const val ARTICLE_EXTRA = "ARTICLE_EXTRA"
 private const val TAG = "ArticleAdapter"
@@ -42,7 +39,7 @@ class ArticleAdapter(private val context: Context, private val articles: List<Di
         }
 
         fun bind(article: DisplayArticle) {
-            titleTextView.text = article.headline?.main
+            titleTextView.text = article.headline
             abstractTextView.text = article.abstract
 
             Glide.with(context)

@@ -1,6 +1,5 @@
-package ArticleSearch2.app.src.main.java.com.codepath.articlesearch
-
-import AppDatabase
+package com.codepath.articlesearch
+import android.app.Application
 
 class ArticleApplication: Application(){
     val db by lazy{ AppDatabase.getInstance(this) }

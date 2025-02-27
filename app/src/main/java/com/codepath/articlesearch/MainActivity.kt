@@ -1,6 +1,4 @@
 package com.codepath.articlesearch
-
-import ArticleSearch2.app.src.main.java.com.codepath.articlesearch.ArticleAdapter
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
