@@ -1,7 +1,4 @@
 package com.codepath.articlesearch
-
-import ArticleDao
-import ArticleEntity
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room

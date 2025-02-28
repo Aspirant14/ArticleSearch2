@@ -1,6 +1,5 @@
 package com.codepath.articlesearch
 
-import ArticleSearch2.app.src.main.java.com.codepath.articlesearch.ARTICLE_EXTRA
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -25,8 +24,8 @@ class DetailActivity : AppCompatActivity() {
         abstractTextView = findViewById(R.id.mediaAbstract)
 
         val displayArticle = intent.getSerializableExtra(ARTICLE_EXTRA) as DisplayArticle
-        titleTextView.text = displayArticle.headline?.main
-        bylineTextView.text = displayArticle.byline?.original
+        titleTextView.text = displayArticle.headline
+        bylineTextView.text = displayArticle.byline
         abstractTextView.text = displayArticle.abstract
         // Load the media image
         Glide.with(this)
