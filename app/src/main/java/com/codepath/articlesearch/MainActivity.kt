@@ -1,7 +1,6 @@
 package com.codepath.articlesearch
 import android.os.Bundle
 import android.util.Log
-import android.view.Display
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -44,14 +43,14 @@ class MainActivity : AppCompatActivity() {
         }
         lifecycleScope.launch{
             (application as ArticleApplication).db.articleDao().getAll().collect{
-                databaseList: List<ArticleEntity> ->
-                    databaseList.map{entity ->
-                        DisplayArticle(
-                            entity.headline,
-                            entity.articleAbstract,
-                            entity.byline,
-                            entity.mediaImageUrl
-                        )
+                    databaseList: List<ArticleEntity> ->
+                databaseList.map{entity ->
+                    DisplayArticle(
+                        entity.headline,
+                        entity.articleAbstract,
+                        entity.byline,
+                        entity.mediaImageUrl
+                    )
                 }.also{mappedList ->
                     articles.clear()
                     articles.addAll(mappedList)
@@ -88,7 +87,8 @@ class MainActivity : AppCompatActivity() {
                                         mediaImageUrl = it.mediaImageUrl
                                     )
                                 }
-                        )}
+                            )
+                        }
                     }
                 } catch (e: JSONException) {
                     Log.e(TAG, "Exception: $e")
